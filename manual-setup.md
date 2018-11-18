@@ -110,7 +110,12 @@ Now you need to enable setting the system clock automatically at boot time. You 
 sudo nano /etc/modules
 ```
 
-Add `rtc-ds1307` at the end of the file.
+Add the following lines to the bottom of the file:
+
+    i2c-dev
+    w1-gpio
+    w1-therm
+    rtc-ds1307
 
 Next you will need to add the DS1307 device creation at boot by editing the `/etc/rc.local` file by running:
 
