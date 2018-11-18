@@ -3,20 +3,20 @@ import interrupt_client, bme680, ds18b20_therm, database
 # import wind_direction
 import SI1145.SI1145 as SI1145
 
-bme = bme680.BME680(i2c_addr=0x77)  # temp in C, pressure in hPa and humidity in %RH
+#bme = bme680.BME680(i2c_addr=0x77)  # temp in C, pressure in hPa and humidity in %RH
 # These oversampling settings can be tweaked to
 # change the balance between accuracy and noise in
 # the data.
-bme.set_humidity_oversample(bme680.OS_2X)
-bme.set_pressure_oversample(bme680.OS_4X)
-bme.set_temperature_oversample(bme680.OS_8X)
-bme.set_filter(bme680.FILTER_SIZE_3)
+#bme.set_humidity_oversample(bme680.OS_2X)
+#bme.set_pressure_oversample(bme680.OS_4X)
+#bme.set_temperature_oversample(bme680.OS_8X)
+#bme.set_filter(bme680.FILTER_SIZE_3)
 
 temperature=20
 pressure=1000
 humidity=90
 
-si = SI1145.SI1145()
+#si = SI1145.SI1145()
 vis = 0
 IR = 0
 uvIndex = 45 / 100.0
