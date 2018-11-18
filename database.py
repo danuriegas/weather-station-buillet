@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import MySQLdb, datetime, http.client, json, os
+import MySQLdb, datetime, json, os
 
 class mysql_database:
     def __init__(self):
