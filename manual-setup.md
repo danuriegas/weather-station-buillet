@@ -269,7 +269,7 @@ We will install the python libraries (if needed) for the different sensors, star
 
 Now, we will install the python library for accessing the [SI1145](https://www.adafruit.com/product/1777) temperature sensor written by Joe Gutting, type in:
 
-    pip3 install git+https://github.com/THP-JOE/Python_SI1145
+    sudo pip3 install git+https://github.com/THP-JOE/Python_SI1145
 
 ## Start the Weather Station daemon and test it
 
