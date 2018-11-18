@@ -32,7 +32,7 @@ class mysql_database:
 class weather_database:
     def __init__(self):
         self.db = mysql_database()
-        self.insert_template = "INSERT INTO WEATHER_MEASUREMENT (AMBIENT_TEMPERATURE, BAROMETRIC_PRESSURE, HUMIDITY, GROUND_TEMPERATURE, VIS_LIGHT, IR_LIGHT, UV_INDEX, WIND_DIRECTION, WIND_SPEED, WIND_GUST_SPEED, RAINFALL, CREATED) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,);"
+        self.insert_template = "INSERT INTO WEATHER_MEASUREMENT (AMBIENT_TEMPERATURE, BAROMETRIC_PRESSURE, HUMIDITY, GROUND_TEMPERATURE, VIS_LIGHT, IR_LIGHT, UV_INDEX, WIND_DIRECTION, WIND_SPEED, WIND_GUST_SPEED, RAINFALL, CREATED) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
         self.update_template =  "UPDATE WEATHER_MEASUREMENT SET REMOTE_ID=%s WHERE ID=%s;"
         self.upload_select_template = "SELECT * FROM WEATHER_MEASUREMENT WHERE REMOTE_ID IS NULL;"
 
