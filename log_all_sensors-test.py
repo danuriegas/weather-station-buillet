@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import interrupt_client, bme680, ds18b20_therm, wind_direction, database
+import interrupt_client, bme680, ds18b20_therm, database
+# import wind_direction
 import SI1145.SI1145 as SI1145
 
 bme = bme680.BME680(i2c_addr=0x77)  # temp in C, pressure in hPa and humidity in %RH
