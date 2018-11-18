@@ -234,20 +234,22 @@ Type the code below, taking note of the following tips:
 
 ```
   CREATE TABLE WEATHER_MEASUREMENT(
-    ID BIGINT NOT NULL AUTO_INCREMENT,
-    REMOTE_ID BIGINT,
-    AMBIENT_TEMPERATURE DECIMAL(6,2) NOT NULL,
-    GROUND_TEMPERATURE DECIMAL(6,2) NOT NULL,
-    AIR_QUALITY DECIMAL(6,2) NOT NULL,
-    AIR_PRESSURE DECIMAL(6,2) NOT NULL,
-    HUMIDITY DECIMAL(6,2) NOT NULL,
-    WIND_DIRECTION DECIMAL(6,2) NULL,
-    WIND_SPEED DECIMAL(6,2) NOT NULL,
-    WIND_GUST_SPEED DECIMAL(6,2) NOT NULL,
-    RAINFALL DECIMAL (6,2) NOT NULL,
-    CREATED TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY ( ID )
-  );
+   ID BIGINT NOT NULL AUTO_INCREMENT,
+   REMOTE_ID BIGINT,
+   AMBIENT_TEMPERATURE DECIMAL(6,2) NOT NULL,
+   BAROMETRIC_PRESSURE DECIMAL(6,2) NOT NULL,
+   HUMIDITY DECIMAL(6,2) NOT NULL,
+   GROUND_TEMPERATURE DECIMAL(6,2) NOT NULL,
+   VIS_LIGHT DECIMAL(6,2) NOT NULL,
+   IR_LIGHT DECIMAL(6,2) NOT NULL,
+   UV_INDEX DECIMAL(6,2) NOT NULL,
+   WIND_DIRECTION DECIMAL(6,2) NULL,
+   WIND_SPEED DECIMAL(6,2) NOT NULL,
+   WIND_GUST_SPEED DECIMAL(6,2) NOT NULL,
+   RAINFALL DECIMAL (6,2) NOT NULL,
+   CREATED TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY ( ID )
+);
 ```
 
 You should now see `Query OK, 0 rows affected (0.05 sec)`.
@@ -264,7 +266,7 @@ Now, we will install the python library for accessing the [SI1145](https://www.a
 
     pip3 install git+https://github.com/THP-JOE/Python_SI1145
 
-### Start the Weather Station daemon and test it
+## Start the Weather Station daemon and test it
 
 A daemon is a process that runs in the background. To start the daemon we need for the Weather Station, use the following command:
 
@@ -397,7 +399,7 @@ SELECT * FROM WEATHER_MEASUREMENT;
 After a lot of measurements have been recorded, it will be sensible to use the SQL `where` clause to only select records that were created after a specific date and time:
 
 ```bash
-SELECT * FROM WEATHER_MEASUREMENT WHERE CREATED > '2014-01-01 12:00:00';
+SELECT * FROM WEATHER_MEASUREMENT WHERE CREATED > '2018-01-01 12:00:00';
 ```
 
 Press `Ctrl`+`D` or type `exit` to quit MySQL.
