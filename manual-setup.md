@@ -183,7 +183,6 @@ At the command line, type the following:
 
 ```bash
 sudo apt-get install -y mariadb-server mariadb-client libmariadbclient-dev
-sudo apt-get install -y apache2 php5 libapache2-mod-php5 php-mysql
 sudo pip3 install mysqlclient
 ```
 
