@@ -113,6 +113,6 @@ class WindDirection(object):
         return self.get_average(data)
     
 if __name__ == "__main__":
-    obj = WindDirection(0, "wind_direction.json")
+    obj = WindDirection(0, config_filename="wind_direction.json")
     print(obj.get_value(10))
 
