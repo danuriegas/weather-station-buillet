@@ -41,7 +41,7 @@ First, you'll need to download the necessary files:
 cd ~ && git clone https://github.com/danuriegas/weather-station-buillet
 ```
 
-We've included an install script to set up the real-time clock automatically. You can run this file or, alternatively, follow the instructions below to set up the RTC manually. We recommend using the install script!
+We've included an install script to set up the weather-station-buillet including the RTC module. You can run this file or, alternatively, follow the instructions below to set up the RTC manually. We recommend using the install script!
 
 ## Setting up the real-time clock
 
