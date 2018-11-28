@@ -6,9 +6,10 @@ import os
 from gpiozero import MCP3008
 
 class WindDirection(object):
-    def __init__(self, adc_channel=0, config_filename = None):
+    def __init__(self, adc_channel=0, max_voltage=3.3, config_filename = None):
         self.adc_channel = adc_channel
-        self.adc = MCP3008(adc_channel)
+        self.max_voltage = max_voltage
+        self.adc = MCP3008(adc_channel, max_voltage)
 
         config_path = os.path.join(os.path.dirname(__file__), config_filename)
         with open(config_path, "r") as f:
@@ -19,7 +20,7 @@ class WindDirection(object):
         vdivider = self.config["vdivider"]
         for dir in self.config["directions"]:
             dir["vout"] = self.calc_vout(vdivider, dir["ohms"], vin)
-            dir["adc"] = round(self.adc.max * (dir["vout"] / self.adc.vref))
+            dir["adc"] = round(dir["vout"] / max_voltage, 3)
         
         sorted_by_adc = sorted(self.config["directions"], key=lambda x: x["adc"])
 
@@ -36,7 +37,7 @@ class WindDirection(object):
                 delta = (above["adc"] - dir["adc"]) / 2.0
                 dir["adcmax"] = dir["adc"] + delta
             else:
-                dir["adcmax"] = self.adc.max - 1
+                dir["adcmax"] = max_voltage - 1
 
     def calc_vout(self, r1, r2, vin):
         """
@@ -54,7 +55,7 @@ class WindDirection(object):
             if (adc_value > 0 and
             adc_value >= dir["adcmin"] and
             adc_value <= dir["adcmax"] and
-            adc_value < self.adc.max):
+            adc_value < self.max_voltage):
                 angle = dir["angle"]
                 break
 
