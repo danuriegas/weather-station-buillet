@@ -103,7 +103,7 @@ class WindDirection(object):
         start_time = time.time()
 
         while time.time() - start_time <= time_window:
-            adc_value = self.adc.read(self.adc_channel)
+            adc_value = self.adc.value(self.adc_channel)
             direction = self.get_dir(adc_value)
             if direction is not None:  # keep only good measurements
                 data.append(direction)
