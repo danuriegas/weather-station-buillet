@@ -32,7 +32,14 @@ Now, download the necessary files:
 
     cd ~ && git clone https://github.com/raspberrypi/weather-station
 
-Go to `manual-stup.md` or run the install script to set up the Weather Station software.
+Go to [manual-stup.md](https://github.com/danuriegas/weather-station-buillet/blob/dev/manual-setup.md) or run the install script to set up the Weather Station software.
+
+## Assembly and wiring
+
+Go to [wiring.md](https://github.com/danuriegas/weather-station-buillet/blob/dev/wiring.md) ro learn how to wire and assembly the weather station.
+
+## Outdoor Installation guide
+(pending)
 
 
 
