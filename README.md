@@ -30,7 +30,7 @@ Start with a fresh install of the latest version of [Raspbian](https://www.raspb
 
 Now, download the necessary files:
 
-    cd ~ && git clone https://github.com/raspberrypi/weather-station
+    cd ~ && git clone https://github.com/danuriegas/weather-station-buillet
 
 Go to [manual-stup.md](https://github.com/danuriegas/weather-station-buillet/blob/dev/manual-setup.md) or run the install script to set up the Weather Station software.
 
